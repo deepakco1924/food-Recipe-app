@@ -1,3 +1,3 @@
-# forkify Project
+# Food Recipe Search App
 
-Recipe application with custom recipe uploads.
+Recipe seacrh application with custom recipe uploads.
