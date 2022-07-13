@@ -1,23 +1,20 @@
-import View from './View.js';
-import icons from 'url:../../img/icons.svg'; // Parcel 2
-
-class PaginationView extends View {
+import view from './view.js';
+import icons from 'url:../../img/icons.svg';
+import { RESULTPERPAGE } from '../config.js';
+class PaginationView extends view {
   _parentElement = document.querySelector('.pagination');
-
-  addHandlerClick(handler) {
+  _addHandlerClick(handler) {
     this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.btn--inline');
+      const btn = e.target.closest('.btn--inline ');
       if (!btn) return;
-
       const goToPage = +btn.dataset.goto;
       handler(goToPage);
     });
   }
-
   _generateMarkup() {
     const curPage = this._data.page;
     const numPages = Math.ceil(
-      this._data.results.length / this._data.resultsPerPage
+      (this._data.results.length * 1.0) / RESULTPERPAGE
     );
 
     // Page 1, and there are other pages
@@ -74,5 +71,4 @@ class PaginationView extends View {
     return '';
   }
 }
-
 export default new PaginationView();
