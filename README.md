@@ -9,7 +9,7 @@
 
 
 
-## Deployment
+## run project on computer
 
 To run this project on remote server
 
